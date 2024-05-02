@@ -3,7 +3,13 @@ import { StyleSheet, Text, View } from 'react-native'
 
 
 const RootLayout = () => {
-    return <Slot/>
+    return (
+        <>
+            <Text>Header</Text>
+            <Slot />
+            <Text>Footer</Text>
+        </>
+    )
 }
 
 export default RootLayout
