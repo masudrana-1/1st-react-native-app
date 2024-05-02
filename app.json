@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "react-native-jsm",
-    "slug": "react-native-jsm",
+    "name": "Masud",
+    "slug": "masud",
+    "scheme": "masud",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
