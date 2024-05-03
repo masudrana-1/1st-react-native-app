@@ -1,7 +1,11 @@
-import { Slot, Stack } from 'expo-router'
+import { Slot, SplashScreen, Stack } from 'expo-router'
 import { Text, View } from 'react-native'
 import { useFonts } from 'expo-font'
+import { useEffect } from 'react';
 
+
+    // Prevent the splash screen from auto-hiding before asset loading is complete.
+    SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
 
@@ -16,7 +20,23 @@ const RootLayout = () => {
         "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
         "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
-    })
+    });
+
+    // its depends on dependency 
+    useEffect(() => {
+        if (error) {
+            throw error;
+        }
+
+        if (fontsLoaded) {
+            SplashScreen.hideAsync();
+        }
+
+    }, [fontsLoaded, error])
+
+    if (!fontsLoaded && !error) {
+        return null;
+    }
 
     return (
         <Stack>
