@@ -2,6 +2,8 @@ import { Tabs } from 'expo-router'
 import { View, Text, Image } from 'react-native'
 import {icons} from "../../constants"
 
+
+// tab icon function 
 const TabIcon = ({icon, color, name, focused}) => {
     return (
         <View className="items-center justify-center gap-2">
@@ -11,7 +13,7 @@ const TabIcon = ({icon, color, name, focused}) => {
                 tintColor={color}
                 className="w-6 h-6"
             />
-            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`}>
+            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{color: color}}>
                 {name}
             </Text>
         </View>
@@ -25,7 +27,15 @@ const TabsLayout = () => {
             <Tabs
                 // tab bar label show 
                 screenOptions={{
-                    tabBarShowLabel: false
+                    tabBarShowLabel: false,
+                    tabBarActiveTintColor: '#FFA001',
+                    tabBarInactiveTintColor: '#CDCDE0',
+                    tabBarStyle: {
+                        backgroundColor: '#161622',
+                        borderTopWidth: 1,
+                        borderTopColor: '#232533',
+                        height: 84
+                    }
                 }}
             >
 
