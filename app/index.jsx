@@ -44,6 +44,9 @@ export default function App() {
                     />
                 </View>
             </ScrollView>
+
+            {/* mobile status bar  */}
+            <StatusBar backgroundColor="#161622" style="light" />
         </SafeAreaView>
     );
 }
