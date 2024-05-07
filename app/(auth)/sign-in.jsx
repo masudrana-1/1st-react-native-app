@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from "../../constants"
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
+import { Link } from 'expo-router'
 
 const SignIn = () => {
 
@@ -59,7 +60,13 @@ const SignIn = () => {
                         title="Sign-in"
                         handlePress={submit}
                         containerStyles="mt-7"
+                        isLoading={isSubmitting}
                     />
+
+                    <View className="justify-center pt-5 flex-row gap-2">
+                        <Text className="text-lg text-gray-100 font-pregular">Don't have an account?</Text>
+                        <Link href="/sign-up" className='text-lg font-psemibold text-secondary'>Sign Up</Link>
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
