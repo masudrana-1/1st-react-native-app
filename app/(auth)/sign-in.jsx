@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -27,7 +27,14 @@ const SignIn = () => {
     return (
         <SafeAreaView className="bg-primary h-full">
             <ScrollView>
-                <View className="w-full flex justify-center h-full px-4 my-6">
+                <View
+                    className="w-full flex justify-center h-full px-4 my-6"
+
+                    // for item center in window
+                    style={{
+                        minHeight: Dimensions.get("window").height - 100,
+                    }}
+                >
                     <Image
                         source={images.logo}
                         resizeMode="contain"
@@ -57,7 +64,7 @@ const SignIn = () => {
                     />
 
                     <CustomButton
-                        title="Sign-in"
+                        title="Sign in"
                         handlePress={submit}
                         containerStyles="mt-7"
                         isLoading={isSubmitting}
